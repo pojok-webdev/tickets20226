@@ -1,0 +1,45 @@
+{
+    "count": 6,
+    "prev": null,
+    "current": 1,
+    "next": null,
+    "total_pages": 1,
+    "result": [
+        {
+            "id": 155,
+            "display_name": "KABUPATEN KEPULAUAN SERIBU",
+            "name": "KABUPATEN KEPULAUAN SERIBU",
+            "state_id": 619
+        },
+        {
+            "id": 156,
+            "display_name": "KOTA JAKARTA SELATAN",
+            "name": "KOTA JAKARTA SELATAN",
+            "state_id": 619
+        },
+        {
+            "id": 157,
+            "display_name": "KOTA JAKARTA TIMUR",
+            "name": "KOTA JAKARTA TIMUR",
+            "state_id": 619
+        },
+        {
+            "id": 158,
+            "display_name": "KOTA JAKARTA PUSAT",
+            "name": "KOTA JAKARTA PUSAT",
+            "state_id": 619
+        },
+        {
+            "id": 159,
+            "display_name": "KOTA JAKARTA BARAT",
+            "name": "KOTA JAKARTA BARAT",
+            "state_id": 619
+        },
+        {
+            "id": 160,
+            "display_name": "KOTA JAKARTA UTARA",
+            "name": "KOTA JAKARTA UTARA",
+            "state_id": 619
+        }
+    ]
+}

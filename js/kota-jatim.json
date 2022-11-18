@@ -1,0 +1,232 @@
+{
+    "result": [
+        {
+            "id": 228,
+            "display_name": "KABUPATEN PACITAN",
+            "name": "KABUPATEN PACITAN",
+            "state_id": 623
+        },
+        {
+            "id": 229,
+            "display_name": "KABUPATEN PONOROGO",
+            "name": "KABUPATEN PONOROGO",
+            "state_id": 623
+        },
+        {
+            "id": 230,
+            "display_name": "KABUPATEN TRENGGALEK",
+            "name": "KABUPATEN TRENGGALEK",
+            "state_id": 623
+        },
+        {
+            "id": 231,
+            "display_name": "KABUPATEN TULUNGAGUNG",
+            "name": "KABUPATEN TULUNGAGUNG",
+            "state_id": 623
+        },
+        {
+            "id": 232,
+            "display_name": "KABUPATEN BLITAR",
+            "name": "KABUPATEN BLITAR",
+            "state_id": 623
+        },
+        {
+            "id": 233,
+            "display_name": "KABUPATEN KEDIRI",
+            "name": "KABUPATEN KEDIRI",
+            "state_id": 623
+        },
+        {
+            "id": 234,
+            "display_name": "KABUPATEN MALANG",
+            "name": "KABUPATEN MALANG",
+            "state_id": 623
+        },
+        {
+            "id": 235,
+            "display_name": "KABUPATEN LUMAJANG",
+            "name": "KABUPATEN LUMAJANG",
+            "state_id": 623
+        },
+        {
+            "id": 236,
+            "display_name": "KABUPATEN JEMBER",
+            "name": "KABUPATEN JEMBER",
+            "state_id": 623
+        },
+        {
+            "id": 237,
+            "display_name": "KABUPATEN BANYUWANGI",
+            "name": "KABUPATEN BANYUWANGI",
+            "state_id": 623
+        },
+        {
+            "id": 238,
+            "display_name": "KABUPATEN BONDOWOSO",
+            "name": "KABUPATEN BONDOWOSO",
+            "state_id": 623
+        },
+        {
+            "id": 239,
+            "display_name": "KABUPATEN SITUBONDO",
+            "name": "KABUPATEN SITUBONDO",
+            "state_id": 623
+        },
+        {
+            "id": 240,
+            "display_name": "KABUPATEN PROBOLINGGO",
+            "name": "KABUPATEN PROBOLINGGO",
+            "state_id": 623
+        },
+        {
+            "id": 241,
+            "display_name": "KABUPATEN PASURUAN",
+            "name": "KABUPATEN PASURUAN",
+            "state_id": 623
+        },
+        {
+            "id": 242,
+            "display_name": "KABUPATEN SIDOARJO",
+            "name": "KABUPATEN SIDOARJO",
+            "state_id": 623
+        },
+        {
+            "id": 243,
+            "display_name": "KABUPATEN MOJOKERTO",
+            "name": "KABUPATEN MOJOKERTO",
+            "state_id": 623
+        },
+        {
+            "id": 244,
+            "display_name": "KABUPATEN JOMBANG",
+            "name": "KABUPATEN JOMBANG",
+            "state_id": 623
+        },
+        {
+            "id": 245,
+            "display_name": "KABUPATEN NGANJUK",
+            "name": "KABUPATEN NGANJUK",
+            "state_id": 623
+        },
+        {
+            "id": 246,
+            "display_name": "KABUPATEN MADIUN",
+            "name": "KABUPATEN MADIUN",
+            "state_id": 623
+        },
+        {
+            "id": 247,
+            "display_name": "KABUPATEN MAGETAN",
+            "name": "KABUPATEN MAGETAN",
+            "state_id": 623
+        },
+        {
+            "id": 248,
+            "display_name": "KABUPATEN NGAWI",
+            "name": "KABUPATEN NGAWI",
+            "state_id": 623
+        },
+        {
+            "id": 249,
+            "display_name": "KABUPATEN BOJONEGORO",
+            "name": "KABUPATEN BOJONEGORO",
+            "state_id": 623
+        },
+        {
+            "id": 250,
+            "display_name": "KABUPATEN TUBAN",
+            "name": "KABUPATEN TUBAN",
+            "state_id": 623
+        },
+        {
+            "id": 251,
+            "display_name": "KABUPATEN LAMONGAN",
+            "name": "KABUPATEN LAMONGAN",
+            "state_id": 623
+        },
+        {
+            "id": 252,
+            "display_name": "KABUPATEN GRESIK",
+            "name": "KABUPATEN GRESIK",
+            "state_id": 623
+        },
+        {
+            "id": 253,
+            "display_name": "KABUPATEN BANGKALAN",
+            "name": "KABUPATEN BANGKALAN",
+            "state_id": 623
+        },
+        {
+            "id": 254,
+            "display_name": "KABUPATEN SAMPANG",
+            "name": "KABUPATEN SAMPANG",
+            "state_id": 623
+        },
+        {
+            "id": 255,
+            "display_name": "KABUPATEN PAMEKASAN",
+            "name": "KABUPATEN PAMEKASAN",
+            "state_id": 623
+        },
+        {
+            "id": 256,
+            "display_name": "KABUPATEN SUMENEP",
+            "name": "KABUPATEN SUMENEP",
+            "state_id": 623
+        },
+        {
+            "id": 257,
+            "display_name": "KOTA KEDIRI",
+            "name": "KOTA KEDIRI",
+            "state_id": 623
+        },
+        {
+            "id": 258,
+            "display_name": "KOTA BLITAR",
+            "name": "KOTA BLITAR",
+            "state_id": 623
+        },
+        {
+            "id": 259,
+            "display_name": "KOTA MALANG",
+            "name": "KOTA MALANG",
+            "state_id": 623
+        },
+        {
+            "id": 260,
+            "display_name": "KOTA PROBOLINGGO",
+            "name": "KOTA PROBOLINGGO",
+            "state_id": 623
+        },
+        {
+            "id": 261,
+            "display_name": "KOTA PASURUAN",
+            "name": "KOTA PASURUAN",
+            "state_id": 623
+        },
+        {
+            "id": 262,
+            "display_name": "KOTA MOJOKERTO",
+            "name": "KOTA MOJOKERTO",
+            "state_id": 623
+        },
+        {
+            "id": 263,
+            "display_name": "KOTA MADIUN",
+            "name": "KOTA MADIUN",
+            "state_id": 623
+        },
+        {
+            "id": 264,
+            "display_name": "KOTA SURABAYA",
+            "name": "KOTA SURABAYA",
+            "state_id": 623
+        },
+        {
+            "id": 265,
+            "display_name": "KOTA BATU",
+            "name": "KOTA BATU",
+            "state_id": 623
+        }
+    ]
+}

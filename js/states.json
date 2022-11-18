@@ -1,0 +1,208 @@
+{
+    "result": [
+        {
+            "id": 613,
+            "display_name": "Aceh (ID)",
+            "name": "Aceh",
+            "country_id": 100
+        },
+        {
+            "id": 614,
+            "display_name": "Bali (ID)",
+            "name": "Bali",
+            "country_id": 100
+        },
+        {
+            "id": 615,
+            "display_name": "Bangka Belitung (ID)",
+            "name": "Bangka Belitung",
+            "country_id": 100
+        },
+        {
+            "id": 617,
+            "display_name": "Bengkulu (ID)",
+            "name": "Bengkulu",
+            "country_id": 100
+        },
+        {
+            "id": 616,
+            "display_name": "Banten (ID)",
+            "name": "Banten",
+            "country_id": 100
+        },
+        {
+            "id": 618,
+            "display_name": "Gorontalo (ID)",
+            "name": "Gorontalo",
+            "country_id": 100
+        },
+        {
+            "id": 620,
+            "display_name": "Jambi (ID)",
+            "name": "Jambi",
+            "country_id": 100
+        },
+        {
+            "id": 621,
+            "display_name": "Jawa Barat (ID)",
+            "name": "Jawa Barat",
+            "country_id": 100
+        },
+        {
+            "id": 623,
+            "display_name": "Jawa Timur (ID)",
+            "name": "Jawa Timur",
+            "country_id": 100
+        },
+        {
+            "id": 619,
+            "display_name": "Jakarta (ID)",
+            "name": "Jakarta",
+            "country_id": 100
+        },
+        {
+            "id": 622,
+            "display_name": "Jawa Tengah (ID)",
+            "name": "Jawa Tengah",
+            "country_id": 100
+        },
+        {
+            "id": 624,
+            "display_name": "Kalimantan Barat (ID)",
+            "name": "Kalimantan Barat",
+            "country_id": 100
+        },
+        {
+            "id": 627,
+            "display_name": "Kalimantan Timur (ID)",
+            "name": "Kalimantan Timur",
+            "country_id": 100
+        },
+        {
+            "id": 629,
+            "display_name": "Kepulauan Riau (ID)",
+            "name": "Kepulauan Riau",
+            "country_id": 100
+        },
+        {
+            "id": 625,
+            "display_name": "Kalimantan Selatan (ID)",
+            "name": "Kalimantan Selatan",
+            "country_id": 100
+        },
+        {
+            "id": 626,
+            "display_name": "Kalimantan Tengah (ID)",
+            "name": "Kalimantan Tengah",
+            "country_id": 100
+        },
+        {
+            "id": 628,
+            "display_name": "Kalimantan Utara (ID)",
+            "name": "Kalimantan Utara",
+            "country_id": 100
+        },
+        {
+            "id": 630,
+            "display_name": "Lampung (ID)",
+            "name": "Lampung",
+            "country_id": 100
+        },
+        {
+            "id": 631,
+            "display_name": "Maluku (ID)",
+            "name": "Maluku",
+            "country_id": 100
+        },
+        {
+            "id": 632,
+            "display_name": "Maluku Utara (ID)",
+            "name": "Maluku Utara",
+            "country_id": 100
+        },
+        {
+            "id": 633,
+            "display_name": "Nusa Tenggara Barat (ID)",
+            "name": "Nusa Tenggara Barat",
+            "country_id": 100
+        },
+        {
+            "id": 634,
+            "display_name": "Nusa Tenggara Timur (ID)",
+            "name": "Nusa Tenggara Timur",
+            "country_id": 100
+        },
+        {
+            "id": 635,
+            "display_name": "Papua (ID)",
+            "name": "Papua",
+            "country_id": 100
+        },
+        {
+            "id": 636,
+            "display_name": "Papua Barat (ID)",
+            "name": "Papua Barat",
+            "country_id": 100
+        },
+        {
+            "id": 637,
+            "display_name": "Riau (ID)",
+            "name": "Riau",
+            "country_id": 100
+        },
+        {
+            "id": 642,
+            "display_name": "Sulawesi Utara (ID)",
+            "name": "Sulawesi Utara",
+            "country_id": 100
+        },
+        {
+            "id": 643,
+            "display_name": "Sumatra Barat (ID)",
+            "name": "Sumatra Barat",
+            "country_id": 100
+        },
+        {
+            "id": 641,
+            "display_name": "Sulawesi Tenggara (ID)",
+            "name": "Sulawesi Tenggara",
+            "country_id": 100
+        },
+        {
+            "id": 639,
+            "display_name": "Sulawesi Selatan (ID)",
+            "name": "Sulawesi Selatan",
+            "country_id": 100
+        },
+        {
+            "id": 638,
+            "display_name": "Sulawesi Barat (ID)",
+            "name": "Sulawesi Barat",
+            "country_id": 100
+        },
+        {
+            "id": 644,
+            "display_name": "Sumatra Selatan (ID)",
+            "name": "Sumatra Selatan",
+            "country_id": 100
+        },
+        {
+            "id": 640,
+            "display_name": "Sulawesi Tengah (ID)",
+            "name": "Sulawesi Tengah",
+            "country_id": 100
+        },
+        {
+            "id": 645,
+            "display_name": "Sumatra Utara (ID)",
+            "name": "Sumatra Utara",
+            "country_id": 100
+        },
+        {
+            "id": 646,
+            "display_name": "Yogyakarta (ID)",
+            "name": "Yogyakarta",
+            "country_id": 100
+        }
+    ]
+}
