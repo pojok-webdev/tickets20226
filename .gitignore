@@ -1,1 +1,5 @@
 node_modules
+client_sites.sql
+clientcleansing2.sql
+ticketcausecategories.sql
+ticketcausesz.sql
