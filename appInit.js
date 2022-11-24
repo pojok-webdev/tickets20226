@@ -17,5 +17,5 @@ app.use(cookieParser())
 console.log("DIRNAME",__dirname)
 module.exports = {
     app:app,
-    con:con,odoo:odoo,padi:padi
+    con:con,odoo:odoo,padi:padi,
 }

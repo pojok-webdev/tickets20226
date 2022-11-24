@@ -47,3 +47,5 @@ alter table oclient_sites add column kota_id varchar(5);
 alter table oclient_sites add column kecamatan_id varchar(5);
 
 alter table oclient_sites add column kelurahan_id varchar(5);
+
+"MASUKKAN RASA BAHAGIA KE HATI ORANG LAIN DENGAN SEDEKAH"

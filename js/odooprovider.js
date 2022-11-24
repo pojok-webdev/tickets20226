@@ -1,12 +1,13 @@
 const kecamatan = require('./kecamatan');
 const kota = require('./kota')
 const kelurahan = require('./kelurahan')
+var setting = require('./appSetting')
 gets = (obj,callback) => {
     var axios = require('axios');
-
+    console.log("session got",obj.session_id)
     var config = {
     method: 'get',
-    url: 'https://demo.kapesolusi.work/api/sale.subscription/?query={id,name,display_name,site_location_id}',
+    url: setting.server.url+'/api/sale.subscription/?query={id,name,display_name,site_location_id}',
     headers: { 
         'Cookie': 'session_id='+obj.session_id
     }
@@ -25,18 +26,18 @@ gets = (obj,callback) => {
 
 }
 login = (obj,callback) => {
-    var axios = require('axios');
+    var axios = require('axios');    
     var data = JSON.stringify({
     "params": {
-        "login": "apipadi@gmail.com",
-        "password": "Totol1nk",
-        "db": "padish"
+        "login": setting.server.login,
+        "password": setting.server.password,
+        "db": setting.server.db
     }
     });
 
     var config = {
     method: 'post',
-    url: 'https://demo.kapesolusi.work/auth',
+    url: setting.server.url + '/auth',
     headers: { 
         'Content-Type': 'application/json', 
         'Cookie': 'padi internet'

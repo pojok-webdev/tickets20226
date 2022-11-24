@@ -47,9 +47,9 @@ i.app.get('/getcookies',(req,res)=>{
 i.app.get('/getsubscriptions',(req,res)=>{
     i.odoo.gets({session_id:req.cookies.session_id},objs=>{
         console.log(objs)
-        res.send({'results':objs.result.map(obj=>{
+        /*res.send({'results':objs.result.map(obj=>{
             return {id:obj.id,text:obj.display_name}
-        })})
+        })})*/
     })
 })
 i.app.get('/getcauses',(req,res)=>{
