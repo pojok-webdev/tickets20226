@@ -49,3 +49,14 @@ alter table oclient_sites add column kecamatan_id varchar(5);
 alter table oclient_sites add column kelurahan_id varchar(5);
 
 "MASUKKAN RASA BAHAGIA KE HATI ORANG LAIN DENGAN SEDEKAH"
+
+
+aktifkan windows subsystem for linux
+ - dari Turn WIndows features on or off
+ - centeang windows subsystem for linux
+install wsl
+ - dari command prompt sebagai Administrator
+ - wsl --install -d ubuntu
+ puji
+ n471yah
+ 

@@ -23,6 +23,24 @@ i.app.get('/showtickets',(req,res)=>{
 i.app.get('/login',(req,res)=>{
     res.render('login')
 })
+i.app.post('/seriouslogin',(req,res)=>{
+    params = req.body
+      params = req.body
+  i.auth.doLogin({
+    i:i,params:params,res:res,req,req,redirpath:'/showclients'
+  },result=>{
+    if(result.authenticated){
+      i.logging.writeLog({
+        createuser:result.username,subject:'Login '+result.email,description:'Login '+result.email,i:i
+      },logresult=>{
+        res.redirect('/showclients')
+      })
+    }else{
+      res.redirect('/login')
+    }
+  })
+
+})
 i.app.post('/handlelogin',(req,res)=>{
     i.odoo.login({},auth=>{
         console.log('AUTH',auth)
@@ -75,7 +93,8 @@ i.app.get('/getclients',(req,res)=>{
 })
 i.app.get('/showclients',(req,res)=>{
     res.render("padihelper/index",{
-        title:'Clients'
+        title:'Clients',
+        loggeduser:req.cookies.email
     })
 })
 i.app.get('/getkota/:state_id',(req,res)=>{
@@ -118,9 +137,23 @@ i.app.post('/updatepoint',(req,res)=>{
     +'set state_id="'+params.state_id+'",'
     +'kota_id="'+params.kota_id+'",'
     +'kecamatan_id="'+params.kecamatan_id+'",'
-    +'kelurahan_id="'+params.kelurahan_id+'"'
+    +'kelurahan_id="'+params.kelurahan_id+'",'
+    +'modifier="'+params.modifier+'" '
     +'where id='+params.id+' ' ,result=>{
-        res.send({result:result})
+        i.logging.writeLog({
+            createuser:req.cookies.email,
+            subject:'update point '+params.id,
+            description:'Update '+params.id+'-'+params.state_id+'-'+params.kota_id+'-'+params.kecamatan_id+'-'+params.kelurahan_id+'-',i:i
+          },logresult=>{
+            console.log('Logresult',logresult)
+            res.send({result:result})
+        })
+    })
+})
+i.app.get('/search/:term',(req,res)=>{
+    params = req.params
+    res.render('search',{
+        term:params.term
     })
 })
 i.app.listen('20226',_ =>{

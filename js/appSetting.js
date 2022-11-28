@@ -19,5 +19,5 @@ server = [
     }
 ]
 module.exports = {
-    server:server[0]
+    server:server[1]
 }

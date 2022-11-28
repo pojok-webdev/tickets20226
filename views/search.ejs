@@ -1,0 +1,58 @@
+<html>
+    <head>
+        <script src="./../assets/adminlte/plugins/jquery/jquery.min.js"></script>
+    </head>
+    <body>
+        <div id="result"></div>
+        <script>term = '<%- term %>'</script>
+        <script>
+            search = obj =>{
+                $.ajax({
+                    url:obj.url,
+                    dataType:'json'
+                })
+                .done(res=>{
+                    console.log('Resu',res.result)
+                    out = res.result.filter(element=>{
+                        return element.display_name.toString().toLowerCase().indexOf((obj.term).toString().toLowerCase()) !== -1;
+                    })
+                    console.log("Out",out)
+                    $('#result').html(JSON.stringify(out))
+                })
+                .fail(err=>{
+                    console.log("Erro",err)
+                })
+
+            }
+        </script>
+        <script>
+            /*search({
+                url:'/js/kota-jatim.json',
+                term:term
+            })*/
+            search({
+                url:'/js/kelurahan.json',
+                term:term
+            })
+        </script>
+        <script>
+            const languages = ["JavaScript", "Python", "Ruby", "C", "C++", "Swift", "PHP", "Java"];
+
+            function searchFor(arr, query) {
+                function condition(element) {
+                    return element.toLowerCase().indexOf(query.toLowerCase()) !== -1;
+                }
+                return arr.filter(condition);
+            }
+
+            let newArr = searchFor(languages, "ja");
+            console.log(newArr); // [ 'JavaScript', 'Java' ]
+
+            // using arrow function
+            const searchArr = (arr, query) => arr.filter(element => element.toLowerCase().indexOf(query.toLowerCase()) !== -1);
+
+            let newLanguages = searchArr(languages, "p");
+            console.log(newLanguages); // [ 'JavaScript', 'Python', 'PHP' ]
+        </script>
+    </body>
+</html>
