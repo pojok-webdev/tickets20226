@@ -1,7 +1,16 @@
+setting = require('./appSetting')
 writeLog = (obj,callback) => {
+    console.log('Login Query', obj.i.crud.create({
+        tableName:setting.db+'.logging',
+        cols:[
+            {key:'createuser',val:obj.createuser},
+            {key:'subject',val:obj.subject},
+            {key:'description',val:obj.description},
+        ]
+    }))
     obj.i.con.doQuery(
         obj.i.crud.create({
-            tableName:'teknis.logging',
+            tableName:setting.db+'.logging',
             cols:[
                 {key:'createuser',val:obj.createuser},
                 {key:'subject',val:obj.subject},
@@ -15,9 +24,14 @@ writeLog = (obj,callback) => {
     )
 }
 readLogs = obj => {
+    console.log("loggin qquery",obj.i.crud.gets({
+        tableName:setting.db+'.logging',
+        cols:['id','subject','description','createuser','createdate'],
+        conditions:[{key:'1',val:'1'}]
+    }))
     obj.i.con.doQuery(
         obj.i.crud.gets({
-            tableName:'teknis.logging',
+            tableName:setting.db+'.logging',
             cols:['id','subject','description','createuser','createdate'],
             conditions:[{key:'1',val:'1'}]
         }),
@@ -29,7 +43,7 @@ readLogs = obj => {
 readLog = obj => {
     obj.i.con.doQuery(
         obj.i.crud.gets({
-            tableName:'teknis.logging',
+            tableName:setting.db+'.logging',
             cols:['id','subject','description','createuser'],
             conditions:[{key:'1',val:'1'}]
         }),

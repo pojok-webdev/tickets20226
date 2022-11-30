@@ -17,7 +17,8 @@ server = [
         url : 'https://odoo.padi.net.id',
         db:'padish'
     }
-]
+],
+db = 'teknis'
 module.exports = {
-    server:server[1]
+    server:server[1],db:db
 }

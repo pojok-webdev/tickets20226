@@ -97,12 +97,49 @@ i.app.get('/showclients',(req,res)=>{
         loggeduser:req.cookies.email
     })
 })
-i.app.get('/getkota/:state_id',(req,res)=>{
+i.app.get('/getkotas/:state_id',(req,res)=>{
     params = req.params
     console.log('Params Kota',params)
     mykot = i.odoo.kota.kota().results.filter(kot=>{
         return kot.state_id === parseInt(params.state_id)
     }).map(kot=>{
+        return {id:kot.id,text:kot.display_name}
+    })
+    console.log("Kec",mykot)
+    res.send({"results":mykot})
+})
+i.app.post('/get_kota',(req,res)=>{
+    params = req.body
+    console.log('params',params)
+    mykot = i.odoo.kota.kota().results.filter(kot=>{
+        return kot.state_id === parseInt(params.state_id)
+    })
+    .filter(kot=>{
+        //console.log("Kot 2",kot)
+        //console.log('display name',kot.display_name)
+        //console.log('params term',params.term)
+        return kot.display_name.toString().toLowerCase().indexOf(params.search)!==-1
+    })
+    .map(kot=>{
+        console.log("Kot maooed",kot)
+        return {id:kot.id,text:kot.display_name}
+    })
+    console.log("Kec",mykot)
+    res.send({"results":mykot})
+})
+i.app.get('/getkota/:state_id/:term',(req,res)=>{
+    params = req.params
+    console.log('Params Kota',params)
+    mykot = i.odoo.kota.kota().results.filter(kot=>{
+        return kot.state_id === parseInt(params.state_id)
+    })
+    .filter(kot=>{
+        console.log("Kot 2",kot)
+        console.log('display name',kot.display_name)
+        console.log('params term',params.term)
+        return kot.display_name.toString().toLowerCase().indexOf(params.term)!==-1
+    })
+    .map(kot=>{
         return {id:kot.id,text:kot.display_name}
     })
     console.log("Kec",mykot)
@@ -118,6 +155,47 @@ i.app.get('/getkecamatan/:kota_id',(req,res)=>{
     })
     console.log("Kec",mykec)
     res.send({"results":mykec})
+})
+i.app.post('/get_kecamatan',(req,res)=>{
+    params = req.body
+    console.log('Kec Params',params)
+    mykec = i.odoo.kecamatan.kecamatan().results.filter(kec=>{
+        return kec.kota_id === parseInt(params.kota_id)
+    })
+    .filter(kec=>{
+        return kec.display_name.toString().toLowerCase().indexOf(params.search)!==-1
+    })
+    .map(kec=>{
+        return {id:kec.id,text:kec.display_name}
+    })
+    console.log("Kec",mykec)
+    res.send({"results":mykec})
+})
+i.app.get('/getkecamatan/:kota_id/:term',(req,res)=>{
+    params = req.params
+    console.log('Param Kecamatan',params)
+    mykec = i.odoo.kecamatan.kecamatan().results.filter(kec=>{
+        return kec.kota_id === parseInt(params.kota_id)
+    }).map(kec=>{
+        return {id:kec.id,text:kec.display_name}
+    })
+    console.log("Kec",mykec)
+    res.send({"results":mykec})
+})
+i.app.post('/get_kelurahan',(req,res)=>{
+    params = req.body
+    console.log('key params',params)
+    mykel = i.odoo.kelurahan.kel().results.filter(kel=>{
+        return kel.kecamatan_id===parseInt(params.kecamatan_id)
+    })
+    .filter(kel=>{
+        return kel.display_name.toLowerCase().indexOf(params.search)!==-1
+    })
+    .map(kel=>{
+        return {id:kel.id,text:kel.display_name}
+    })
+    console.log("Kelurahan",mykel)
+    res.send({"results":mykel})
 })
 i.app.get('/getkelurahan/:kecamatan_id',(req,res)=>{
     params = req.params
@@ -138,7 +216,8 @@ i.app.post('/updatepoint',(req,res)=>{
     +'kota_id="'+params.kota_id+'",'
     +'kecamatan_id="'+params.kecamatan_id+'",'
     +'kelurahan_id="'+params.kelurahan_id+'",'
-    +'modifier="'+params.modifier+'" '
+    +'modifier="'+params.modifier+'", '
+    +'city="'+params.city+'" '
     +'where id='+params.id+' ' ,result=>{
         i.logging.writeLog({
             createuser:req.cookies.email,
@@ -154,6 +233,12 @@ i.app.get('/search/:term',(req,res)=>{
     params = req.params
     res.render('search',{
         term:params.term
+    })
+})
+i.app.get('/showkotas/:state_id',(req,res)=>{
+    res.render('commons/kotas',{
+        title:'Kota',
+        loggeduser:req.cookies.email
     })
 })
 i.app.listen('20226',_ =>{

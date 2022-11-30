@@ -32,7 +32,7 @@
         <a href="/" class="nav-link">Home</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="#" class="nav-link">Contact</a>
+        <a href="#" class="nav-link">Client</a>
       </li>
     </ul>
 
@@ -124,7 +124,7 @@
     <div class="float-right d-none d-sm-block">
       <b>Version</b> 3.2.0
     </div>
-    <strong>Copyright &copy; 2021-2022 <a href="https://adminlte.io">PadiNET</a>.</strong> All rights reserved.
+    <strong>Copyright &copy; 2021-2022 <a href="https://database.padinet.com">PadiNET</a>.</strong> All rights reserved.
   </footer>
 
   <!-- Control Sidebar -->
@@ -189,6 +189,26 @@
             class:"clientsiteid"
           },
           {
+            targets:4,
+            class:'city'
+          },
+          {
+            targets:5,
+            class:'state_id'
+          },
+          {
+            targets:6,
+            class:'kota_id'
+          },
+          {
+            targets:7,
+            class:'kecamatan_id'
+          },
+          {
+            targets:8,
+            class:'kelurahan_id'
+          },
+          {
             targets:9,
             "defaultContent":'<button class="btn setaddress">Set Address</button>'
         }
@@ -203,12 +223,16 @@
     tr = $(this).stairUp({level:2})
     tr.addClass('selected')
     id = tr.find('.clientsiteid').text()
-    console.log('cleeeek',id)
+    $('#select2state').val(tr.find('.state_id').text())
+    $('#select2city').val(tr.find('.kota_id').text())
+    $('#select2kecamatan').val(tr.find('.kecamatan_id').text()).trigger('change')
+    $('#select2kelurahan').val(tr.find('.kelurahan_id').text()).trigger('change')
+    console.log('kecamatan_id',tr.find('.kecamatan_id').text())
     $('#modal-setaddress-xl').modal()
   })
 </script>
 <script>
-  reloadCity = obj => {
+  reloadCity2 = obj => {
     console.log("URL",obj.url)
     $('#select2city').select2('destroy').empty().select2({
     ajax:{
@@ -224,6 +248,30 @@
     .trigger('change')
   }
   
+
+  reloadCity = obj => {
+    $('#select2city').select2('destroy').empty().select2({
+      ajax:{
+        url:function(params){
+              if(obj.hasOwnProperty('term')){
+                console.log("term exist",obj.term)
+                return '/getkota/'+obj.state_id+'/'+obj.term
+              }else{
+                console.log("term not exist")
+                return '/getkotas/'+obj.state_id+'/'
+              }
+            },
+            processResults:obj=>{
+              console.log('OBJ got',obj)
+              return obj
+            }
+
+      }
+    })
+    .trigger('change')
+  }
+
+
   reloadKecamatan = obj => {
     console.log("URL",obj.url)
     $('#select2kecamatan').select2('destroy').empty().select2({
@@ -254,58 +302,67 @@
     })
     .trigger('change')
   }
-  $('#select2state').change(function(){
-    console.log('this val',$(this).val())
-    reloadCity({
-      url:'/getkota/'+$(this).val()
-    })
-  })
   $('#select2city').select2({
     ajax:{
-      url:'/js/kota-jatimb.json',
+      url:'/get_kota',
+      type:'post',
       data:function(params){
+        console.log('params',params.term)
           var query = {
-            search:params.term,type:'public'
+            search:params.term,type:'public',
+            state_id: $('#select2state').val()
           }
           return query
-        },dataType:'json'
+      },
+      dataType:'json',
+      processResults: function (data) {
+        console.log('data',data)
+        console.log('param',$('#select2city :selected').text())
+        return data
+      }
     }
   })
   $('#select2kecamatan').select2({
     ajax:{
-      url:'/getkecamatan/1',
+      url:'/get_kecamatan',
+      type:'post',
       data:function(params){
-          var query = {
-            search:params.term,type:'public'
-          }
-          return query
-        },dataType:'json'
+        var query = {
+          kota_id:$('#select2city').val(),
+          search:params.term,type:'public'
+        }
+        return query
+      },
+      dataType:'json',
+      processResults:function(data){
+        console.log("Process result",data)
+        return data
       }
+    }
     })
   $('#select2kelurahan').select2({
     ajax:{
-      url:'/getkelurahan/1',
+      url:'/get_kelurahan',
+      type:'post',
       data:function(params){
           var query = {
+            kecamatan_id:$('#select2kecamatan').val(),
             search:params.term,type:'public'
           }
           return query
-        },dataType:'json'
+        },dataType:'json',
+      processResults:function(data){
+        console.log("Process result",data)
+        return data
+      }
       }
     })
-  $('#select2city').change(function(){
-    reloadKecamatan({url:'/getkecamatan/'+$(this).val()})
-  })
-  $('#select2kecamatan').change(function(){
-    reloadKelurahan({url:'/getkelurahan/'+$(this).val()})
-  })
   $("#savepoint").click(function(){
     console.log("ID",$('#example1 tr.selected').find('.clientsiteid').text())
     console.log("state_id",$('#select2state').val())
     console.log("kota_id",$('#select2city').val())
     console.log("kecamatan_id",$('#select2kecamatan').val())
     console.log("kelurahan_id",$('#select2kelurahan').val())
-
     $.ajax({
       url:'/updatepoint',
       type:'post',
@@ -316,11 +373,16 @@
         kota_id:$('#select2city').val(),
         kecamatan_id:$('#select2kecamatan').val(),
         kelurahan_id:$('#select2kelurahan').val(),
-        modifier:loggeduser
+        modifier:loggeduser,city:$('#select2city :selected').text()
       }
     })
     .done(res=>{
       console.log("Res",res)
+      $('#example1 tr.selected').find('.city').text($('#select2city :selected').text())
+      $('#example1 tr.selected').find('.state_id').text($('#select2state :selected').val())
+      $('#example1 tr.selected').find('.kota_id').text($('#select2city :selected').val())
+      $('#example1 tr.selected').find('.kelurahan_id').text($('#select2kelurahan :selected').val())
+      $('#example1 tr.selected').find('.kecamatan_id').text($('#select2kecamatan :selected').val())
     })
     .fail(err=>{
       console.log("Err",err)
