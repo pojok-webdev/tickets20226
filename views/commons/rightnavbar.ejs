@@ -1,5 +1,6 @@
 <ul class="navbar-nav ml-auto">
     <!-- Navbar Search -->
+    <%if(1==2){%>
     <li class="nav-item">
       <a class="nav-link" data-widget="navbar-search" href="#" role="button">
         <i class="fas fa-search"></i>
@@ -20,8 +21,9 @@
         </form>
       </div>
     </li>
-
+    <%}%>
     <!-- Messages Dropdown Menu -->
+    <% if(1==2){ %>
     <li class="nav-item dropdown">
       <a class="nav-link" data-toggle="dropdown" href="#">
         <i class="far fa-comments"></i>
@@ -79,7 +81,9 @@
         <a href="#" class="dropdown-item dropdown-footer">See All Messages</a>
       </div>
     </li>
+    <% } %>
     <!-- Notifications Dropdown Menu -->
+    <%if(1==2){%>
     <li class="nav-item dropdown">
       <a class="nav-link" data-toggle="dropdown" href="#">
         <i class="far fa-bell"></i>
@@ -106,14 +110,19 @@
         <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
       </div>
     </li>
+    <%}%>
+    <%if(1==2){%>
     <li class="nav-item">
       <a class="nav-link" data-widget="fullscreen" href="#" role="button">
         <i class="fas fa-expand-arrows-alt"></i>
       </a>
     </li>
+    <%}%>
+    <%if(1==2){%>
     <li class="nav-item">
       <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">
         <i class="fas fa-th-large"></i>
       </a>
     </li>
+    <%}%>
   </ul>
