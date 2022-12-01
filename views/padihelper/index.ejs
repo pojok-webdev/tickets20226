@@ -97,7 +97,7 @@
                     <th>Pelanggan</th>
                     <th>site id</th>
                     <th>Alamat</th>
-                    <th>Kota</th>z
+                    <th>Kota</th>
                     <th>State</th>
                     <th>kota</th>
                     <th>kec</th>
@@ -223,8 +223,10 @@
     tr = $(this).stairUp({level:2})
     tr.addClass('selected')
     id = tr.find('.clientsiteid').text()
+
+    
     $('#select2state').val(tr.find('.state_id').text())
-    $('#select2city').val(tr.find('.kota_id').text())
+    $('#select2city').val(tr.find('.kota_id').text()).trigger('change')
     $('#select2kecamatan').val(tr.find('.kecamatan_id').text()).trigger('change')
     $('#select2kelurahan').val(tr.find('.kelurahan_id').text()).trigger('change')
     console.log('kecamatan_id',tr.find('.kecamatan_id').text())
@@ -232,84 +234,13 @@
   })
 </script>
 <script>
-  reloadCity2 = obj => {
-    console.log("URL",obj.url)
-    $('#select2city').select2('destroy').empty().select2({
-    ajax:{
-      url:obj.url,
-      data:function(params){
-          var query = {
-            search:params.term,type:'public'
-          }
-          return query
-        },dataType:'json'
-      }
-    })
-    .trigger('change')
-  }
-  
-
-  reloadCity = obj => {
-    $('#select2city').select2('destroy').empty().select2({
-      ajax:{
-        url:function(params){
-              if(obj.hasOwnProperty('term')){
-                console.log("term exist",obj.term)
-                return '/getkota/'+obj.state_id+'/'+obj.term
-              }else{
-                console.log("term not exist")
-                return '/getkotas/'+obj.state_id+'/'
-              }
-            },
-            processResults:obj=>{
-              console.log('OBJ got',obj)
-              return obj
-            }
-
-      }
-    })
-    .trigger('change')
-  }
-
-
-  reloadKecamatan = obj => {
-    console.log("URL",obj.url)
-    $('#select2kecamatan').select2('destroy').empty().select2({
-    ajax:{
-      url:obj.url,
-      data:function(params){
-          var query = {
-            search:params.term,type:'public'
-          }
-          return query
-        },dataType:'json'
-      }
-    })
-    .trigger('change')
-
-  }
-  reloadKelurahan = obj => {
-    $('#select2kelurahan').select2('destroy').empty().select2({
-      ajax:{
-        url:obj.url,
-        data:function(params){
-          var query = {
-            search:params.term,type:'public'
-          }
-          return query
-        },dataType:'json'
-      }
-    })
-    .trigger('change')
-  }
   $('#select2city').select2({
     ajax:{
       url:'/get_kota',
       type:'post',
       data:function(params){
-        console.log('params',params.term)
           var query = {
-            search:params.term,type:'public',
+            search:params.hasOwnProperty('term')?params.term:' ',type:'public',
             state_id: $('#select2state').val()
           }
           return query
@@ -329,7 +260,7 @@
       data:function(params){
         var query = {
           kota_id:$('#select2city').val(),
-          search:params.term,type:'public'
+          search:params.hasOwnProperty('term')?params.term:' ',type:'public'
         }
         return query
       },
@@ -347,7 +278,7 @@
       data:function(params){
           var query = {
             kecamatan_id:$('#select2kecamatan').val(),
-            search:params.term,type:'public'
+            search:params.hasOwnProperty('term')?params.term:' ',type:'public'
           }
           return query
         },dataType:'json',
