@@ -18,7 +18,7 @@ server = [
         db:'padish'
     }
 ],
-db = 'teknis'
+db = 'odoohelper'
 module.exports = {
     server:server[1],db:db
 }
